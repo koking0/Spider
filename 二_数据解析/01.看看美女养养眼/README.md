@@ -4,25 +4,25 @@
 
 2.1、Elements 分析
 
-![Elements分析_div](images/README/1.Elements分析_div.png)
+![Elements分析_div](https://github.com/koking0/Spider/tree/master/%E4%BA%8C_%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/01.%E7%9C%8B%E7%9C%8B%E7%BE%8E%E5%A5%B3%E5%85%BB%E5%85%BB%E7%9C%BC/images/README/1.Elements分析_div.png)
 
 一个 class 为 block photo 的 div 就对应一个图片盒子。
 
 而它的子元素中有一个 img 标签，其中的 src 属性值就是图片的 URL。
 
-![Elements分析_img](images/README/2.Elements分析_img.png)
+![Elements分析_img](https://github.com/koking0/Spider/tree/master/%E4%BA%8C_%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/01.%E7%9C%8B%E7%9C%8B%E7%BE%8E%E5%A5%B3%E5%85%BB%E5%85%BB%E7%9C%BC/images/README/2.Elements分析_img.png)
 
 将 src 对应的 URL 在一个新的窗口打开，即可看到对应的图片。
 
 URL：http://imglf5.nosdn0.126.net/img/d0svNWxhcXdZa29nZWYwMjV6U1R1T2xSb1pUL1ErREVDNlo2NWQxdHB6R1ZTUmNYMG16ZEV3PT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg
 
-![3.Elements分析_URL](images/README/3.Elements分析_URL.png)
+![3.Elements分析_URL](https://github.com/koking0/Spider/tree/master/%E4%BA%8C_%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/01.%E7%9C%8B%E7%9C%8B%E7%BE%8E%E5%A5%B3%E5%85%BB%E5%85%BB%E7%9C%BC/images/README/3.Elements分析_URL.png)
 
 将 URL 简化之后也可得到相同的图片：
 
 URL：http://imglf5.nosdn0.126.net/img/d0svNWxhcXdZa29nZWYwMjV6U1R1T2xSb1pUL1ErREVDNlo2NWQxdHB6R1ZTUmNYMG16ZEV3PT0.jpg
 
-![4.Elements分析_简化URL](images/README/4.Elements分析_简化URL.png)
+![4.Elements分析_简化URL](https://github.com/koking0/Spider/tree/master/%E4%BA%8C_%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90/01.%E7%9C%8B%E7%9C%8B%E7%BE%8E%E5%A5%B3%E5%85%BB%E5%85%BB%E7%9C%BC/images/README/4.Elements分析_简化URL.png)
 
 2.2、Page分析
 
