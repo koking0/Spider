@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<script src="https://assets.gitee.com/assets/static/sentry-5.1.0-109ee3d8895a239331efcf947ba7f5d8.js"></script>
+<title>码云 Gitee — 基于 Git 的代码托管和研发协作平台</title>
+<meta charset='utf-8'>
+<meta content='always' name='referrer'>
+<meta content='码云' property='og:site_name'>
+<meta content='Object' property='og:type'>
+<meta content='http://gitee.com/' property='og:url'>
+<meta content='https://gitee.com/static/images/logo_themecolor.png' itemprop='image' property='og:image'>
+<meta content='码云 Gitee — 基于 Git 的代码托管和研发协作平台' itemprop='name' property='og:title'>
+<meta content='码云(gitee.com)是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 500 万的开发者选择码云。' property='og:description'>
+<meta content='Gitee,码云,代码托管,git,开源,内源,开源项目托管,免费代码托管,Git代码托管,企业代码管理' name='Keywords'>
+<meta content='码云(gitee.com)是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 500 万的开发者选择码云。' itemprop='description' name='Description'>
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="bFkPtriBc350mh2URddyOV2X2hD7BM2G1HP704a8o+g=" name="csrf-token" />
+
+<link href="https://assets.gitee.com/assets/favicon-9007bd527d8a7851c8330e783151df58.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+  var title = document.title.replace(/( - Gitee| - 码云)$/, '')
+      imgUrl = '';
+  
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var imgUrlEl = document.querySelector('.readme-box .markdown-body > img, .readme-box .markdown-body :not(a) > img');
+    imgUrl = imgUrlEl && imgUrlEl.getAttribute('src');
+  
+    if (!imgUrl) {
+      imgUrlEl = document.querySelector('meta[itemprop=image]');
+      imgUrl = imgUrlEl && imgUrlEl.getAttribute('content'); 
+      imgUrl = imgUrl || "https://gitee.com/static/images/logo_themecolor.png";
+    }
+  
+    wx.config({
+      debug: false,
+      appId: "wxff219d611a159737",
+      timestamp: "1586256353",
+      nonceStr: "29337b71bf013d26924f8d3b059a1ca7",
+      signature: "de85070e8a3723b98a772497674f4f7eb5820104",
+      jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage'
+      ]
+    });
+  
+    wx.ready(function () {
+      wx.onMenuShareTimeline({
+        title: title, // 分享标题
+        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: imgUrl // 分享图标
+      });
+      wx.onMenuShareAppMessage({
+        title: title, // 分享标题
+        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        desc: document.querySelector('meta[name=Description]').getAttribute('content'),
+        imgUrl: imgUrl // 分享图标
+      });
+    });
+    wx.error(function(res){
+      console.error('err', res)
+    });
+  })
+</script>
+
+<script>
+//<![CDATA[
+window.gon = {};gon.locale="zh-CN";gon.sentry_dsn=null;gon.baidu_register_hm_push=null;gon.info={"controller_path":"home","action_name":"index","current_user":false};gon.tour_env={"current_user":null,"action_name":"index","original_url":"http://gitee.com/","controller_path":"home"};
+//]]>
+</script>
+<!--[if lt IE 10]>
+<script>
+    window.location.href = "/incompatible.html";
+</script>
+<![endif]-->
+
+<link href="https://assets.gitee.com/assets/home/application-ad3f8c214b4842ecdf216c3ea329f080.css" media="screen" rel="stylesheet" />
+<script src="https://assets.gitee.com/assets/home/app-0fc9be7501c62bf98073136b5cc86cf8.js"></script>
+
+<style>
+  #git-bulletin, #oneclick_login_by_osc{
+    display: none !important;
+  }
+</style>
+</head>
+<body class='large ui_basic' id='home-index'>
+<header class='common-header fixed large navbar-immersive navbar-transition noborder' id='git-header-nav'>
+<div class='ui container'>
+<div class='ui menu header-menu'>
+<div class='git-nav-expand-bar'>
+<i class='iconfont icon-mode-table'></i>
+</div>
+<div class='gitee-nav__sidebar'>
+<div class='gitee-nav__sidebar-container'>
+<div class='gitee-nav__sidebar-top'>
+<div class='gitee-nav__avatar-box'></div>
+<div class='gitee-nav__buttons-box'>
+<a class="ui button small fluid orange" href="/login">登录</a>
+<a class="ui button small fluid basic is-register" href="/signup">注册</a>
+</div>
+</div>
+<div class='gitee-nav__sidebar-middle'>
+<div class='gitee-nav__sidebar-list'>
+<ul>
+<li class='gitee-nav__sidebar-item'>
+<a href="/explore"><i class='iconfont icon-ic-discover'></i>
+<span class='gitee-nav__sidebar-name'>开源软件</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/enterprises"><i class='iconfont icon-ic-enterprise'></i>
+<span class='gitee-nav__sidebar-name'>企业版</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/education"><i class='iconfont icon-ic-education'></i>
+<span class='gitee-nav__sidebar-name'>高校版</span>
+</a></li>
+<li class='gitee-nav__sidebar-item split-line'></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/search"><i class='iconfont icon-ic-search'></i>
+<span class='gitee-nav__sidebar-name'>搜索</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/help"><i class='iconfont icon-help-circle'></i>
+<span class='gitee-nav__sidebar-name'>帮助中心</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/terms"><i class='iconfont icon-file'></i>
+<span class='gitee-nav__sidebar-name'>使用条款</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/about_us"><i class='iconfont icon-issuepx'></i>
+<span class='gitee-nav__sidebar-name'>关于我们</span>
+</a></li>
+</ul>
+</div>
+</div>
+<div class='gitee-nav__sidebar-bottom'>
+<div class='gitee-nav__sidebar-close-button'>
+<i class='fa fa-angle-double-left'></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class='item gitosc-logo'>
+<a href="/"><img alt='码云 Gitee — 基于 Git 的代码托管和研发协作平台' class='ui inline image' height='28' src='/static/images/logo.svg?t=158106664' title='码云 Gitee — 基于 Git 的代码托管和研发协作平台' width='95'>
+<img alt='码云 Gitee — 基于 Git 的代码托管和研发协作平台' class='ui inline black image' height='28' src='/static/images/logo-black.svg?t=158106664' title='码云 Gitee — 基于 Git 的代码托管和研发协作平台' width='95'>
+</a></div>
+<a class="item " href="/explore" title="开源软件">开源软件
+</a><a class="item " href="/enterprises" title="企业版">企业版
+<sup class='ui red label'>
+特惠
+</sup>
+</a><a class="item " href="/education" title="高校版">高校版
+</a><a class="item" href="https://blog.gitee.com/" id="gitee-blog" target="_blank" title="博客">博客
+</a><div class='center responsive-logo'>
+<a href="/"><img alt='码云 Gitee — 基于 Git 的代码托管和研发协作平台' class='ui inline image' height='24' src='/static/images/logo.svg?t=158106664' title='码云 Gitee — 基于 Git 的代码托管和研发协作平台' width='85'>
+<img alt='码云 Gitee — 基于 Git 的代码托管和研发协作平台' class='ui inline black image' height='24' src='/static/images/logo-black.svg?t=158106664' title='码云 Gitee — 基于 Git 的代码托管和研发协作平台' width='85'>
+</a></div>
+<div class='right menu userbar' id='git-nav-user-bar'>
+<form accept-charset="UTF-8" action="/search" class="ui item" data-text-filter="搜索格式不正确" data-text-require="搜索关键字不能少于1个" id="navbar-search-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<input id="navbar-search-type" name="type" type="hidden" />
+<input id="fork_filter" name="fork_filter" type="hidden" value="on" />
+<div class='ui search'>
+<input class="prompt" id="navbar-search-input" name="q" placeholder="搜索项目" type="text" value="" />
+</div>
+</form>
+
+<script>
+  var can_search_in_repo = 0,
+      repo = "",
+      reponame = "";
+  
+  $(function() {
+    var $search = $('#navbar-search-form .ui.search');
+    $search.search({
+      apiSettings: {
+        url: '/search/relative_project?q={query}',
+        onResponse: function (res) {
+          if (res && res.status === 200 && res.data) {
+            var query = $search.search('get value');
+  
+            res.data.map(function (item) {
+              item.path_ns = '/' + item.path_ns;
+              item.icon = 'iconfont icon-project-public';
+            });
+            res.data.unshift({
+              name_ns: "在全站搜索 <b class='hl'>" + query +"</b> 相关项目",
+              path_ns: '/search?fork_filter=on&q=' + query,
+              icon: 'iconfont icon-search'
+            });
+            if(can_search_in_repo == 1) {
+              res.data.unshift({
+                name_ns: "在当前仓库搜索 <b class='hl'>" + query +"</b> 相关代码",
+                path_ns: '/search?type=code&q=' + query + '&repo=' + repo + '&reponame=' + reponame,
+                icon: 'iconfont icon-search'
+              });
+            }
+            return res;
+          } else {
+            return { data: [] };
+          }
+        }
+      },
+      fields: {
+        results: 'data',
+        description: 'name_ns',
+        url: 'path_ns',
+        icon: 'icon'
+      },
+      minCharacters: 1,
+      maxResults: 10,
+      searchDelay: 120,
+      showNoResults: false,
+      transition: 'fade'
+    });
+  });
+</script>
+
+<a class="item git-nav-user__login-item" href="/login">登录
+</a><a class="item git-nav-user__register-item" href="/signup">注册
+</a><script>
+  $('.destroy-user-session').on('click', function() {
+    $.cookie('access_token', null, { path: '/' });
+  })
+</script>
+
+</div>
+</div>
+</div>
+</header>
+<script>
+  Gitee.initNavbar()
+  Gitee.initRepoRemoteWay()
+</script>
+
+<div class='fixed-notice-infos'>
+<div class='all-messages'>
+</div>
+<div class='ui container'>
+<div class='flash-messages' id='messages-container'></div>
+</div>
+<script>
+  (function() {
+    $(function() {
+      var $error_box, alertTip, notify_content, notify_options, template;
+      template = '<div data-notify="container" class="ui {0} message" role="alert">' + '<i data-notify="dismiss" class="close icon"></i>' + '<span data-notify="message">{2}</span>' + '</div>';
+      notify_content = null;
+      notify_options = {};
+      alertTip = '';
+      $error_box = $(".flash_error.flash_error_box");
+      if (notify_options.type === 'error' && $error_box.length > 0 && !$.isEmptyObject(notify_content.message)) {
+        if (notify_content.message === 'captcha_fail') {
+          alertTip = "验证码不正确";
+        } else if (notify_content.message === 'captcha_expired') {
+          alertTip = "验证码已过期，请点击刷新";
+        } else if (notify_content.message === 'not_found_in_database') {
+          alertTip = "帐号或者密码错误";
+        } else if (notify_content.message === 'not_found_and_show_captcha') {
+          alertTip = "帐号或者密码错误";
+        } else if (notify_content.message === 'phone_captcha_fail') {
+          alertTip = "手机验证码不通过";
+        } else {
+          alertTip = notify_content.message;
+        }
+        return $error_box.html(alertTip).show();
+      } else if (notify_content) {
+        if ("index" === 'third_party_binding') {
+          return $('#third_party_binding-message').html(notify_content.message).addClass('ui message red');
+        }
+        notify_options.delay = 3000;
+        notify_options.template = template;
+        notify_options.offset = {
+          x: 10,
+          y: 30
+        };
+        notify_options.element = '#messages-container';
+        return $.notify(notify_content, notify_options);
+      }
+    });
+  
+  }).call(this);
+</script>
+
+</div>
+<script>
+  (function() {
+    $(function() {
+      var setCookie;
+      setCookie = function(name, value) {
+        $.cookie(name, value, {
+          path: '/',
+          expires: 365
+        });
+      };
+      $('#remove-bulletin, #remove-bulletin-dashboard').on('click', function() {
+        setCookie('remove_bulletin', "gitee-maintain-1585783198");
+        $('#git-bulletin').hide();
+      });
+      $('#remove-member-bulletin').on('click', function() {
+        setCookie('remove_member_bulletin', "gitee_member_bulletin");
+        $(this).parent().hide();
+      });
+      return $('#remove-gift-bulletin').on('click', function() {
+        setCookie('remove_gift_bulletin', "gitee-gift-bulletin");
+        $(this).parent().hide();
+      });
+    });
+  
+  }).call(this);
+</script>
+<script>
+  function closeMessageBanner(pthis, type, val) {
+    var json = {}
+  
+    val = typeof val === 'undefined' ? null : val
+    $(pthis).parent().remove()
+    if (type === 'out_of_enterprise_member') {
+      json = {type: type, data: val}
+    } else if (type === 'enterprise_overdue') {
+      json = {type: type, data: val}
+    }
+    $.post('/profile/close_flash_tip', json)
+  }
+</script>
+
+<!--[if lt IE 10]>
+<script>
+  window.location.href = "/incompatible.html"
+</script>
+<![endif]-->
+
+<div class='site-content'>
+<div id='homepage'>
+<div class='homepage-section homepage__header'>
+<div class='ui container'>
+<div class='homepage__header-body'>
+<img alt="Illus hero" class="homepage__header-image" src="https://assets.gitee.com/assets/homepage/illus_hero.png?t=158494970" srcset="/assets/homepage/illus_hero.png?t=158494970, /assets/homepage/illus_hero@2x.png?t=158494970 2x" />
+<div class='homepage__header-content'>
+<div class='homepage__header-slogan'>
+稳定・高效・安全
+</div>
+<h1 class='ui header homepage__header-title'>
+码云 Gitee - 云端软件开发协作平台
+</h1>
+<div class='homepage__header-description'>
+帮助个人、团队、企业轻松实现
+<strong>
+Git/SVN 代码托管、协作开发
+</strong>
+</div>
+<div class='homepage__header-actions'>
+<a class="ui button bordered orange large homepage__button" href="/signup?from=homepage">加入码云</a>
+<a class="ui button orange large homepage__button" href="/enterprises?from=homepage">免费开通企业版</a>
+</div>
+</div>
+</div>
+</div>
+<div class='ui container'>
+<div class='homepage__question'>
+我已经有GitHub了，
+<a class="orange" href="/contrast?from=homepage" target="_blank">为什么要用码云？</a>
+<a class="orange" href="https://blog.gitee.com/2018/06/05/github_to_gitee?from=homepage" target="_blank">如何一键导入 GitHub 仓库？</a>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__features'>
+<div class='ui container'>
+<div class='homepage__features-list'>
+<div class='homepage__features-row'>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_personal.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+个人免费
+</h3>
+<div class='homepage__feature-description'>
+<p>私有仓库免费</p>
+<p>5G 免费仓库</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_webide.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+在线 IDE
+</h3>
+<div class='homepage__feature-description'>
+<p>支持 Git 版本管理</p>
+<p>随时随地修改和提交代码</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_apidoc.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+API 文档生成
+</h3>
+<div class='homepage__feature-description'>
+<p>Java/PHP 代码 API 文档</p>
+<p>自动生成和浏览</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_code_quality.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+代码质量分析
+</h3>
+<div class='homepage__feature-description'>
+<p>Pull Requests 自动质量</p>
+<p>分析及仓库完整代码分析</p>
+</div>
+</div>
+</div>
+<div class='homepage__features-row'>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_code_detection.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+代码克隆检测
+</h3>
+<div class='homepage__feature-description'>
+<p>代码克隆检测</p>
+<p>进行相似性检测</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_pages.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+Pages Pro
+</h3>
+<div class='homepage__feature-description'>
+<p>支持自定义域名、HTTPS</p>
+<p>支持 Jekyll、Hugo、Hexo</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_force_push.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+限制仓库强推
+</h3>
+<div class='homepage__feature-description'>
+<p>不用担心强推代码导致</p>
+<p>代码丢失</p>
+</div>
+</div>
+<div class='homepage__feature'>
+<div class='homepage__feature-icon'>
+<img alt="" class="" height="" src="https://assets.gitee.com/assets/homepage/features_third_party.svg" width="" />
+</div>
+<h3 class='ui header homepage__feature-title'>
+微信钉钉集成
+</h3>
+<div class='homepage__feature-description'>
+<p>微信与钉钉接收帐号登录、</p>
+<p>任务分配、PR 等通知</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__ui'>
+<div class='ui container'>
+<h1 class='ui header homepage__ui-title homepage__title'>
+用户界面
+</h1>
+<div class='homepage__ui-container'>
+<div class='swiper-container homepage__ui-list'>
+<div class='swiper-wrapper'>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="企业版工作台" href="/assets/homepage/screenshots/ent_dashboard.png?1580974148083"><img alt="Ent dashboard.png?1580974148083" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/ent_dashboard.png?1580974148083.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="企业版项目视图" href="/assets/homepage/screenshots/ent_program.png"><img alt="Ent program.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/ent_program.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="企业版任务看板" href="/assets/homepage/screenshots/ent_issue.png?1580974148083"><img alt="Ent issue.png?1580974148083" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/ent_issue.png?1580974148083.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="企业版管理" href="/assets/homepage/screenshots/ent_manage.png"><img alt="Ent manage.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/ent_manage.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="仓库主页" href="/assets/homepage/screenshots/repo_index.png"><img alt="Repo index.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/repo_index.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="Issue  面板" href="/assets/homepage/screenshots/issue_index.png"><img alt="Issue index.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/issue_index.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="Issue 详情" href="/assets/homepage/screenshots/issue_detail.png"><img alt="Issue detail.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/issue_detail.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="Gitee 在线代码编辑器" href="/assets/homepage/screenshots/ide.png"><img alt="Ide.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/ide.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="Wiki" href="/assets/homepage/screenshots/wiki.png"><img alt="Wiki.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/wiki.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="Pull Request" href="/assets/homepage/screenshots/pr.png"><img alt="Pr.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/pr.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="仓库设置" href="/assets/homepage/screenshots/repo_setting.png"><img alt="Repo setting.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/repo_setting.png.thumb" />
+</a></div>
+<div class='swiper-slide'>
+<a class="fancybox" data-fancybox-group="homepage__ui" data-fancybox-title="通知消息设置" href="/assets/homepage/screenshots/notification.png"><img alt="Notification.png" class="homepage__ui-item-image" src="https://assets.gitee.com/assets/homepage/screenshots/notification.png.thumb" />
+</a></div>
+</div>
+</div>
+<i class='iconfont icon-arrow-circle-left swiper-button-prev homepage__ui-button--prev'></i>
+<i class='iconfont icon-arrow-circle-right swiper-button-next homepage__ui-button--next'></i>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__find'>
+<div class='ui container'>
+<h1 class='ui header homepage__find-title homepage__title'>
+发现实用、有趣的开源项目
+</h1>
+<div class='homepage__find-wordcloud-container'>
+<div class='homepage__find-wordcloud-canvas-container'>
+<canvas height='250' id='homepage__find-wordcloud-canvas' width='800'></canvas>
+</div>
+<div class='homepage__find-wordcloud-list' id='homepage__find-wordcloud-list'>
+<ul>
+<li>
+<a href="/gvp" target="_blank">GVP</a>
+</li>
+<li>
+<a href="/explore/starred?lang=Java" target="_blank">Java</a>
+</li>
+<li>
+<a href="/explore/starred?lang=PHP" target="_blank">PHP</a>
+</li>
+<li>
+<a href="/explore/starred?lang=JavaScript" target="_blank">JavaScript</a>
+</li>
+<li>
+<a href="/explore/starred?lang=Android" target="_blank">Android</a>
+</li>
+<li>
+<a href="/explore/starred?lang=Python" target="_blank">Python</a>
+</li>
+<li>
+<a href="/explore/starred?lang=Go" target="_blank">Go</a>
+</li>
+<li>
+<a href="/explore/wechat-devel" target="_blank">微信开发</a>
+</li>
+<li>
+<a href="/explore/Artificial-Intelligence" target="_blank">人工智能</a>
+</li>
+<li>
+<a href="/explore/enterprise-app" target="_blank">企业应用</a>
+</li>
+<li>
+<a href="/explore/web-app-develop" target="_blank">Web 开发</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='homepage__find-cards'>
+<div class='homepage__find-card-list'>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/yubaolee/OpenAuth.Core" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='OpenAuth.Core'>
+OpenAuth.Core
+</h2>
+<div class='project-show-card__description' title='.Net Core快速应用开发框架、最好用的权限工作流系统。基于经典领域驱动设计的权限管理及快速开发框架，源于Martin Fowler企业级应用开发思想及最新技术组合（IdentityServer、EF core、AutoFac、WebAPI、Swagger等）。已成功在docker/jenkins中实施。核心模块包括：组织机构、角色用户、权限授权、表单设计、工作流等。它的架构精良易于扩展，是中小企业的首选。'>
+.Net Core快速应用开发框架、最好用的权限工作流系统。基于经典领域驱动设计的权限管理及快速开发框架，源于Martin Fowler企业级应用开发思想及最新技术组合（IdentityServer、EF core、AutoFac、WebAPI、Swagger等）。已成功在docker/jenkins中实施。核心模块包括：组织机构、角色用户、权限授权、表单设计、工作流等。它的架构精良易于扩展，是中小企业的首选。
+</div>
+<div class='project-show-card__user'>
+<img alt="362401 yubaolee 1578921538" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/120/362401_yubaolee_1578921538.png!avatar100" />
+<span class='project-show-card__user-name' title='李玉宝'>
+李玉宝
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>C#</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+741
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+271
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/OpenSkywalking/sky-walking" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='skywalking'>
+skywalking
+</h2>
+<div class='project-show-card__description' title='SkyWalking 是一款开源的应用性能监控系统，包括指标监控，分布式追踪，分布式系统性能诊断。'>
+SkyWalking 是一款开源的应用性能监控系统，包括指标监控，分布式追踪，分布式系统性能诊断。
+</div>
+<div class='project-show-card__user'>
+<img avatar="吴晟 Wu Sheng-wu-sheng" class="ui avatar project-show-card__user-avatar" />
+<span class='project-show-card__user-name' title='吴晟 Wu Sheng'>
+吴晟 Wu Sheng
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>Java</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+1.2K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+343
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/smallc/SpringBlade" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='SpringBlade'>
+SpringBlade
+</h2>
+<div class='project-show-card__description' title='SpringBlade 是一个由商业级项目升级优化而来的SpringCloud分布式微服务架构、SpringBoot单体式微服务架构并存的综合型项目，采用Java8 API重构了业务代码，完全遵循阿里巴巴编码规范。采用Spring Boot 2 、Spring Cloud Hoxton 、Mybatis 等核心技术，同时提供基于React和Vue的两个前端框架用于快速搭建企业级的SaaS多租户微服务平台。  官网：https://bladex.vip'>
+SpringBlade 是一个由商业级项目升级优化而来的SpringCloud分布式微服务架构、SpringBoot单体式微服务架构并存的综合型项目，采用Java8 API重构了业务代码，完全遵循阿里巴巴编码规范。采用Spring Boot 2 、Spring Cloud Hoxton 、Mybatis 等核心技术，同时提供基于React和Vue的两个前端框架用于快速搭建企业级的SaaS多租户微服务平台。  官网：https://bladex.vip
+</div>
+<div class='project-show-card__user'>
+<img alt="474499 smallc 1578925022" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/158/474499_smallc_1578925022.png!avatar100" />
+<span class='project-show-card__user-name' title='smallchill'>
+smallchill
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>Java</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+6.4K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+2.5K
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/tianyalei/md_blockchain" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='md_blockchain'>
+md_blockchain
+</h2>
+<div class='project-show-card__description' title='开源java区块链平台，可做联盟链、私链使用，不适用于公链。各节点已知IP，维持长连接。共识机制采用PBFT。无虚拟货币，可用于存储各种类型的数据，无需挖矿。不仅仅可以用来做账本，还可以做各种定制化的存储需求。理念来自于腾讯的trustsql。加密、公钥私钥、网络模块、存储模块等。'>
+开源java区块链平台，可做联盟链、私链使用，不适用于公链。各节点已知IP，维持长连接。共识机制采用PBFT。无虚拟货币，可用于存储各种类型的数据，无需挖矿。不仅仅可以用来做账本，还可以做各种定制化的存储需求。理念来自于腾讯的trustsql。加密、公钥私钥、网络模块、存储模块等。
+</div>
+<div class='project-show-card__user'>
+<img alt="303698 tianyalei 1578919857" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/101/303698_tianyalei_1578919857.png!avatar100" />
+<span class='project-show-card__user-name' title='tianyaleixiaowu'>
+tianyaleixiaowu
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>Java</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+1.5K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+719
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/quark-renderer/quark-renderer" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='quark-renderer'>
+quark-renderer
+</h2>
+<div class='project-show-card__description' title='一款轻量且强大的 Canvas(&amp;SVG) 渲染引擎，从 ZRender 改进而来。'>
+一款轻量且强大的 Canvas(&amp;SVG) 渲染引擎，从 ZRender 改进而来。
+</div>
+<div class='project-show-card__user'>
+<img alt="28704 mumu osc 1578915609" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/9/28704_mumu-osc_1578915609.png!avatar100" />
+<span class='project-show-card__user-name' title='大漠穷秋'>
+大漠穷秋
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>JavaScript</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+156
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+24
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/zoujingli/WeChatDeveloper" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='WeChatDeveloper'>
+WeChatDeveloper
+</h2>
+<div class='project-show-card__description' title='【新】微信开发工具包（微信服务号+微信小程序+微信支付+支付宝支付）'>
+【新】微信开发工具包（微信服务号+微信小程序+微信支付+支付宝支付）
+</div>
+<div class='project-show-card__user'>
+<img alt="126695 zoujingli 1578918740" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/42/126695_zoujingli_1578918740.png!avatar100" />
+<span class='project-show-card__user-name' title='Anyon'>
+Anyon
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>PHP</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+581
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+159
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/opencc/ccflow" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='CCFlow'>
+CCFlow
+</h2>
+<div class='project-show-card__description' title='驰骋BPM系统包含表单引擎+流程引擎+权限控制,方便集成,配置灵活,功能强大,适合中国国情的工作流引擎.演示:http://demo.ccflow.org,右上角点star方可加群:787427590'>
+驰骋BPM系统包含表单引擎+流程引擎+权限控制,方便集成,配置灵活,功能强大,适合中国国情的工作流引擎.演示:http://demo.ccflow.org,右上角点star方可加群:787427590
+</div>
+<div class='project-show-card__user'>
+<img alt="358162 chichengsoft 1578921363" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/119/358162_chichengsoft_1578921363.png!avatar100" />
+<span class='project-show-card__user-name' title='驰骋BPM'>
+驰骋BPM
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>C#</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+763
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+300
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/pyinjava/fastweixin" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='fastweixin'>
+fastweixin
+</h2>
+<div class='project-show-card__description' title='极其方便的实现微信公众平台服务端开发，2行代码完成服务器绑定，3行代码实现用户消息监听'>
+极其方便的实现微信公众平台服务端开发，2行代码完成服务器绑定，3行代码实现用户消息监听
+</div>
+<div class='project-show-card__user'>
+<img alt="113628 pyinjava 1578918112" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/37/113628_pyinjava_1578918112.jpg!avatar100" />
+<span class='project-show-card__user-name' title='sd4324530'>
+sd4324530
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>Java</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+1.7K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+728
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/owenwangwen/open-capacity-platform" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='open-capacity-platform'>
+open-capacity-platform
+</h2>
+<div class='project-show-card__description' title='简称ocp是基于Spring Cloud的企业级微服务框架(用户权限管理，配置中心管理，应用管理，....),其核心的设计目标是分离前后端，快速开发部署，学习简单，功能强大，提供快速接入核心接口能力，其目标是帮助企业搭建一套类似百度能力开放平台的微服务框架；'>
+简称ocp是基于Spring Cloud的企业级微服务框架(用户权限管理，配置中心管理，应用管理，....),其核心的设计目标是分离前后端，快速开发部署，学习简单，功能强大，提供快速接入核心接口能力，其目标是帮助企业搭建一套类似百度能力开放平台的微服务框架；
+</div>
+<div class='project-show-card__user'>
+<img alt="869801 jeecp 1578934392" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/289/869801_jeecp_1578934392.png!avatar100" />
+<span class='project-show-card__user-name' title='owen'>
+owen
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>Java</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+4.2K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+2.1K
+</span>
+</div>
+</div>
+</div>
+</a></div>
+<div class='project-show-card'>
+<a class="project-show-card__link" href="/rtthread/rt-thread" target="_blank"><div class='project-show-card__bg'></div>
+<div class='project-show-card__content'>
+<h2 class='ui header project-show-card__title' title='rt-thread'>
+rt-thread
+</h2>
+<div class='project-show-card__description' title='RT-Thread是一个来自中国的开源物联网操作系统，它提供了非常强的可伸缩能力：从一个可以运行在ARM Cortex-M0芯片上的极小内核，到中等的ARM Cortex-M3/4/7系统，甚至是运行于MIPS32、ARM Cortex-A系列处理器上功能丰富系统'>
+RT-Thread是一个来自中国的开源物联网操作系统，它提供了非常强的可伸缩能力：从一个可以运行在ARM Cortex-M0芯片上的极小内核，到中等的ARM Cortex-M3/4/7系统，甚至是运行于MIPS32、ARM Cortex-A系列处理器上功能丰富系统
+</div>
+<div class='project-show-card__user'>
+<img alt="9759 rtthread 1578914659" class="ui avatar project-show-card__user-avatar" src="https://portrait.gitee.com/uploads/avatars/user/3/9759_rtthread_1578914659.png!avatar100" />
+<span class='project-show-card__user-name' title='RT-Thread'>
+RT-Thread
+</span>
+</div>
+<div class='project-show-card__metas'>
+<div class='project-show-card__labels'>
+<span class='ui small label project-show-card__label'>C</span>
+</div>
+<div class='project-show-card__repo-metas repo-metas'>
+<span class='repo-meta'>
+<i class='iconfont icon-star'></i>
+1.1K
+</span>
+<span class='repo-meta'>
+<i class='iconfont icon-fork'></i>
+495
+</span>
+</div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__enterprise'>
+<div class='ui container'>
+<div class='homepage__enterprise-body'>
+<div class='homepage__enterprise-main'>
+<h1 class='ui header homepage__section-title'>
+码云企业版
+</h1>
+<div class='homepage__section-slogan'>
+安全、高效、稳定的企业级协作开发平台
+</div>
+<div class='homepage__section-actions'>
+<a class="ui button orange large homepage__button" href="/enterprises?from=homepage" target="_blank">免费开通企业版</a>
+</div>
+<div class='homepage__enterprise-links'>
+<div class='homepage__enterprise-link'>
+<a href="/enterprise_contrast?from=homepage" target="_blank">社区版与企业版功能对比</a>
+</div>
+<div class='homepage__enterprise-link'>
+<a href="https://blog.gitee.com/2018/04/16/productszj/?from=homepage" target="_blank">自建 Git 还是使用企业版？</a>
+</div>
+<div class='homepage__enterprise-link homepage__enterprise-link--more'>
+<a href="/enterprises?from=homepage" target="_blank">了解更多
+<i class='iconfont icon-arrow-right-l'></i>
+</a></div>
+</div>
+</div>
+<img alt="Illus enterprise" class="homepage__enterprise-image" src="https://assets.gitee.com/assets/homepage/illus_enterprise.png" srcset="/assets/homepage/illus_enterprise.png, /assets/homepage/illus_enterprise@2x.png 2x" />
+</div>
+<div class='homepage__enterprise-clients'>
+<div class='homepage__enterprise-clients-title'>
+超过
+<strong>100,000</strong>
+家公司和机构正在使用码云企业版
+</div>
+<div class='homepage__enterprise-clients-list'>
+<div class='homepage__enterprise-clients-row'>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_cmb.png" title="招商银行" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_byd.png" title="比亚迪汽车" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_gdyh.png" title="光大银行" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_cu.png" title="中国联通" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_ct.png" title="中国电信" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_pactera.png" title="文思海辉" />
+</span>
+</div>
+<div class='homepage__enterprise-clients-row'>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://images.gitee.com/uploads/images/2019/1031/105110_1d297d0c_13510.png" title="小盒科技" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_cmsc.png" title="招商证券" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_ptr.png" title="人民邮电出版社" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_ccp.png" title="中信出版社" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_supermap.png" title="超图软件" />
+</span>
+<span class='homepage__enterprise-client'>
+<img alt="企业版案例 LOGO" src="https://assets.gitee.com/assets/homepage/clients/client_igola.png" title="iGola" />
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__education'>
+<div class='ui container'>
+<div class='homepage__education-body'>
+<img alt="Illus education" class="homepage__education-image" src="https://assets.gitee.com/assets/homepage/illus_education.png" srcset="/assets/homepage/illus_education.png, /assets/homepage/illus_education@2x.png 2x" />
+<div class='homepage__education-main'>
+<h1 class='ui header homepage__section-title'>
+码云高校版
+</h1>
+<div class='homepage__section-slogan'>
+助力计算机专业教学改革与「新工科」实践落地
+</div>
+<div class='homepage__section-actions'>
+<a class="ui orange button large homepage__button" href="/education?from=homepage" target="_blank">免费申请高校版</a>
+</div>
+<p class='homepage__education-tips'>
+高校版提供配额资源：
+成员 200人
+仓库 20G
+附件 10G
+（价值 2万元/年）
+</p>
+<div class='homepage__education-links'>
+<div class='homepage__education-link'>
+<a href="/education?from=homepage" target="_blank">了解更多
+<i class='iconfont icon-arrow-right-l'></i>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='homepage-section homepage__comments'>
+<div class='ui container homepage__comments-container'>
+<img alt="Quote" class="homepage__comments--quote" src="https://assets.gitee.com/assets/homepage/quote.svg" />
+</div>
+<h1 class='ui header homepage__comments-title homepage__section-title'>
+他们这样评价码云
+</h1>
+<div class='swiper-container homepage__comments-list'>
+<div class='swiper-wrapper'>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>类似 GitHub 这样的代码托管服务，是软件研发过程中不可缺少的一环，在国内目前还没有特别好的服务，Gitee（码云） 很好地填补了这个空白。一起努力，越来越好，为中国技术人群提供更多更贴心的服务。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Htw" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/htw.jpg" />
+<h5 class='ui header homepage__comments-item-username'>霍泰稳</h5>
+<span class='homepage__comments-item-position'>极客邦科技创始人</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>与其说喜欢码云，其实更喜欢码云的团队。红薯是我见过的最幽默而执着的程序员，认真做产品，有耐心不功利，所以我相信码云一定会做的很好。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Xp" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/xp.jpg" />
+<h5 class='ui header homepage__comments-item-username'>熊平</h5>
+<span class='homepage__comments-item-position'>51CTO创始人</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>许多年轻的开发者使用码云共享和协作，码云也是难得的为中国开发者提供服务的软件平台。期待未来码云继续发展，成为中国开发行业发展之基石！</div>
+<div class='homepage__comments-item-user'>
+<img alt="Ym" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/ym.jpg" />
+<h5 class='ui header homepage__comments-item-username'>阴明</h5>
+<span class='homepage__comments-item-position'>掘金创始人</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>码云已成为我工作的依赖，从个人私有库到企业版，每一项解决方案都直击痛点。而它更吸引人的，是开放的姿态和优质的本土化基因。告诉世界：我们在自豪地使用 Gitee！</div>
+<div class='homepage__comments-item-user'>
+<img alt="Layui" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/layui.jpg" />
+<h5 class='ui header homepage__comments-item-username'>贤心</h5>
+<span class='homepage__comments-item-position'>layui</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>不少国内的好产品，因为用户的迷外心理而不被重视。其实一个友好的中文界面，可以让用户快速掌握软件的所有功能，实实在在地提升效率。期待更多开发者能重视 Gitee，重视国内认真做事的产品团队，他们会给你惊喜。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Wa" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/wa.jpg" />
+<h5 class='ui header homepage__comments-item-username'>王安</h5>
+<span class='homepage__comments-item-position'>DCloud CEO</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>Gitee 为中国开发者提供了更好的本地化能力和服务，在促进中国开源发展上贡献巨大，非常期待 Gitee 更上层楼。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Hq" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/hq.jpg" />
+<h5 class='ui header homepage__comments-item-username'>韩卿</h5>
+<span class='homepage__comments-item-position'>Apache Kylin</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>在互联网技术百花齐放的今天，代码管理工具却几乎被 Git 一统江湖。 Git 是分布式产品，具有速度快，扩展性好的特点，十分适合代码量大、用户多的企业。作为国内 Git 产品，码云对于国人来说，界面友好，响应客户需求及时，本地技术力量雄厚，是企业级应用的优秀选择。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Khs" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/khs.jpg" />
+<h5 class='ui header homepage__comments-item-username'>邝海山</h5>
+<span class='homepage__comments-item-position'>招商银行  码云推广负责人</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>码云是国内代码托管服务的领先者，很认真的产品。适合国内程序员习惯，访问速度极快。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Ryf" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/ryf.jpg" />
+<h5 class='ui header homepage__comments-item-username'>阮一峰</h5>
+<span class='homepage__comments-item-position'>知名技术博主</span>
+</div>
+</div>
+<div class='swiper-slide homepage__comments-item'>
+<div class='homepage__comments-item-content'>码云企业不只是一个代码托管的工具，更是带着深深 Geek 文化的项目管理平台。在码云企业版上，iGola.com 的团队协作变得更加容易，整个流程管理变得更加透明流畅。</div>
+<div class='homepage__comments-item-user'>
+<img alt="Lmj" class="homepage__comments-item-user-avatar" src="https://assets.gitee.com/assets/homepage/avatars/lmj.jpg" />
+<h5 class='ui header homepage__comments-item-username'>李铭健</h5>
+<span class='homepage__comments-item-position'>骑鹅旅行 Head of PMO</span>
+</div>
+</div>
+</div>
+<div class='swiper-pagination'></div>
+</div>
+</div>
+
+<div class='homepage-section homepage__footer'>
+<div class='ui container'>
+<div class='homepage__footer-card'>
+<h1 class='ui header homepage__section-title'>
+码云 Gitee - 云端软件开发协作平台
+</h1>
+<div class='homepage__footer-card-description'>
+帮助个人、团队、企业轻松实现
+<strong>
+Git/SVN 代码托管、协作开发
+</strong>
+</div>
+<div class='homepage__footer-card-actions'>
+<a class="ui button bordered orange large homepage__button" href="/signup?from=homepage">加入码云</a>
+<a class="ui button orange large homepage__button" href="/enterprises?from=homepage">免费开通企业版</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<footer id='git-footer-main'>
+<div class='ui container'>
+<div class='ui two column grid '>
+<div class='nine wide column git-footer-left'>
+<p><a href="https://gitee.com/" target="_blank">© Gitee.com</a></p>
+<div class='ui four column grid' id='footer-left'>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a class="item" href="/about_us">关于我们</a>
+</div>
+<div class='item'>
+<a class="item" href="/terms">使用条款</a>
+</div>
+<div class='item'>
+<a class="item" href="/oschina/git-osc/issues">意见建议</a>
+</div>
+<div class='item'>
+<a class="item" href="/links.html">合作伙伴</a>
+</div>
+</div>
+</div>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a class="item" href="/all-about-git">Git 大全</a>
+</div>
+<div class='item'>
+<a class="item" href="https://oschina.gitee.io/learn-git-branching/">Git 命令学习</a>
+</div>
+<div class='item'>
+<a class="item" href="https://copycat.gitee.com/">代码克隆检测</a>
+</div>
+<div class='item'>
+<a class="item" href="/appclient">APP与插件下载</a>
+</div>
+</div>
+</div>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a class="item" href="/gitee-stars">码云封面人物</a>
+</div>
+<div class='item'>
+<a class="item" href="/gvp">GVP项目</a>
+</div>
+<div class='item'>
+<a class="item" href="https://blog.gitee.com/">码云博客</a>
+</div>
+<div class='item'>
+<a class="item" href="/enterprises#nonprofit-plan">Gitee 公益计划</a>
+</div>
+</div>
+</div>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a class="item" href="/api/v5/swagger">OpenAPI</a>
+</div>
+<div class='item'>
+<a class="item" href="/help">帮助文档</a>
+</div>
+<div class='item'>
+<a class="item" href="/self_services">在线自助服务</a>
+</div>
+<div class='item'>
+<a class="item" href="/git-osc">更新日志</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='seven wide column right aligned followus git-footer-right'>
+<div class='qrcode weixin'>
+<img alt="Qrcode weixin" src="https://assets.gitee.com/assets/qrcode-weixin-9e7cfb27165143d2b8e8b268a52ea822.jpg" />
+<p class='weixin-text'>微信服务号</p>
+</div>
+<div class='phone-and-qq column'>
+<div class='ui list official-support-container'>
+<div class='item'>
+<a class="icon-popup" href="//shang.qq.com/wpa/qunwpa?idkey=df785aa7af71f7d74149ab062742d761b845464350ecba25eb440357a3e573b7" title="点击加入码云官方群"><i class='iconfont icon-logo-qq'></i>
+<span>官方技术交流QQ群：1050025484</span>
+</a></div>
+<div class='item mail-and-zhihu'>
+<a href="mailto: git@oschina.cn"><i class='iconfont icon-ic-mail'></i>
+<span id='git-footer-email'>git#oschina.cn</span>
+</a><a href="https://www.zhihu.com/org/ma-yun-osc/ " target="_blank"><i class='iconfont icon-zhihu'></i>
+<span>码云Gitee</span>
+</a></div>
+<div class='item'>企业版售前及售后使用咨询：400-606-0201</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='bottombar'>
+<div class='ui container'>
+<div class='ui grid'>
+<div class='seven wide column partner'>
+<div class='copyright'>
+<a href="http://www.beian.miit.gov.cn/">粤ICP备12009483号</a>
+深圳市奥思网络科技有限公司版权所有
+</div>
+</div>
+<div class='nine wide column right aligned'>
+<i class='icon world'></i>
+<a href="/language/zh-CN">简 体</a>
+/
+<a href="/language/zh-TW">繁 體</a>
+/
+<a href="/language/en">English</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+  var officialEmail = $('#git-footer-email').text()
+  $('#git-footer-main .icon-popup').popup({ position: 'bottom center' })
+  $('#git-footer-email').text(officialEmail.replace('#', '@'))
+</script>
+
+
+<div class='side-toolbar'>
+<div class='button toolbar-help'>
+<i class='iconfont icon-help'></i>
+</div>
+<div class='ui popup left center dark'>点此查找更多帮助</div>
+<div class='toolbar-help-dialog'>
+<div class='toolbar-dialog-header'>
+<h3 class='toolbar-dialog-title'>搜索帮助</h3>
+<form accept-charset="UTF-8" action="/help/load_keywords_data" class="toolbar-help-search-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='ui icon input fluid toolbar-help-search'>
+<input name='keywords' placeholder='请输入产品名称或问题' type='text'>
+<i class='icon search'></i>
+</div>
+</form>
+
+<i class='iconfont icon-close toolbar-dialog-close-icon'></i>
+</div>
+<div class='toolbar-dialog-content'>
+<div class='toolbar-help-hot-search'>
+<div class='toolbar-roll'>
+<a class="init active" href="https://oschina.gitee.io/learn-git-branching/?utm_source==gitee-help-widget" title="Git 命令在线学习"><i class='Blue icon icon-command iconfont'></i>
+<span>Git 命令在线学习</span>
+</a><a class="init " href="https://gitee.com/help/articles/4261?utm_source==gitee-help-widget" title="如何在码云上导入 GitHub 仓库"><i class='icon icon-clipboard iconfont orange'></i>
+<span>如何在码云上导入 GitHub 仓库</span>
+</a></div>
+<div class='toolbar-list'>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4114">Git 仓库基础操作</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4166">企业版和社区版功能对比</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4191">SSH 公钥设置</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4194">如何处理代码冲突</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4232">仓库体积过大，如何减小？</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4279">如何找回被删除的仓库数据</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4283">码云使用容量说明</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4284">GitHub仓库快速导入Gitee及同步更新</a>
+</div>
+</div>
+</div>
+<div class='toolbar-help-search-reseult'>
+<div class='toolbar-help-flex-column'>
+<div class='ui centered inline loader toolbar-help-loader'></div>
+<div class='toolbar-list'></div>
+<div class='toolbar-help-link-to-help'>
+<a href="" target="_blank">查看更多搜索结果</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  var opt = { position: 'left center' };
+  var $helpSideToolbar = $(".button.toolbar-help");
+  var $toolbarRoll = $('.toolbar-roll');
+  
+  $(function() {
+    if (false) {
+      $helpSideToolbar.popup(opt);
+    } else {
+      $helpSideToolbar.popup('show', opt);
+      setTimeout(function() {
+        $helpSideToolbar.popup('hide', opt);
+      }, 3000);
+    }
+  
+    if ($toolbarRoll.length) {
+      setInterval(function() {
+        var $nextActiveLink = $toolbarRoll.find('a.active').next();
+        if (!$nextActiveLink.length) {
+          $nextActiveLink = $toolbarRoll.find('a:first-child');
+        }
+        $nextActiveLink.attr('class', 'active').siblings().removeClass('active init');
+      }, 5000);
+    }
+  })
+</script>
+
+<div class='button share-link'>
+<i class='iconfont icon-share'></i>
+</div>
+<div class='ui popup dark'>
+<div class='header'>
+分享到
+</div>
+<div class='bdsharebuttonbox' style='display: flex'>
+<a class='iconfont icon-home-service-wechat' data-cmd='weixin' title='分享到微信'></a>
+<a class='iconfont icon-weibo' data-cmd='tsina' title='分享到新浪微博'></a>
+<a class='iconfont icon-qq' data-cmd='sqq' title='分享到QQ好友'></a>
+<a class='iconfont icon-qzone' data-cmd='qzone' title='分享到QQ空间'></a>
+</div>
+</div>
+<div class='button gotop popup' id='gotop'>
+<i class='iconfont icon-top'></i>
+</div>
+<div class='ui popup dark'>回到顶部</div>
+</div>
+<style>
+  .side-toolbar .bdsharebuttonbox a {
+    font-size: 24px;
+    color: white !important;
+    opacity: 0.9;
+    margin: 6px 6px 0px 6px;
+    background-image: none;
+    text-indent: 0;
+    height: auto;
+    width: auto;
+  }
+</style>
+<script>
+  (function() {
+    $('#project-user-message').popup({
+      position: 'left center'
+    });
+  
+  }).call(this);
+</script>
+<script>
+  Gitee.initSideToolbar({})
+</script>
+<script>
+  window._bd_share_config = {
+    "common": {
+      "bdSnsKey": {},
+      "bdText": document.title,
+      "bdMini": "1",
+      "bdMiniList": ["bdxc","tqf","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"],
+      "bdPic": "",
+      "bdStyle": "1",
+      "bdSize": "32"
+    },
+    "share": {}
+  }
+</script>
+<script src="/bd_share/static/api/js/share.js"></script>
+
+
+
+
+
+</body>
+</html>

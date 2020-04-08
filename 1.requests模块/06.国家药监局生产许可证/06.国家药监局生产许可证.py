@@ -21,6 +21,7 @@ if __name__ == '__main__':
 		"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 	}
 	for index in range(1, 101):
+		print("正 在 爬 取 第 %d 页......" % index)
 		idFormData = {
 			"on": "true",
 			"page": 1,

@@ -1,0 +1,193 @@
+{
+  "Table": [
+    {
+      "rowcount": 23
+    }
+  ],
+  "Table1": [
+    {
+      "rownum": 1,
+      "storeName": "沂蒙餐厅",
+      "addressDetail": "红旗路11号银座商城1楼",
+      "pro": "24小时,Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 2,
+      "storeName": "金雀山餐厅",
+      "addressDetail": "兰山区金雀山一路71号",
+      "pro": "Wi-Fi,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 3,
+      "storeName": "和谐广场",
+      "addressDetail": "兰山区解放路与通达路交汇处西南角解放路158号一号楼和谐广场负一楼B103-B105室",
+      "pro": "Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 4,
+      "storeName": "建设路餐厅",
+      "addressDetail": "费县费城镇建设路百姓购物广场1、2层",
+      "pro": "Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 5,
+      "storeName": "隆山路",
+      "addressDetail": "隆山路中段西侧乐尚购物中心一、二层",
+      "pro": "Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 6,
+      "storeName": "财富中心",
+      "addressDetail": "沂蒙山路北、府前街西沂蒙财富广场一、二层",
+      "pro": "Wi-Fi,点唱机,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 7,
+      "storeName": "三和",
+      "addressDetail": "沂蒙路与上海路交汇处颐高上海街一期铺位258、259号两层",
+      "pro": "Wi-Fi,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 8,
+      "storeName": "通达路餐厅",
+      "addressDetail": "通达路36号一层",
+      "pro": "Wi-Fi,点唱机,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 9,
+      "storeName": "郯东路",
+      "addressDetail": "郯城县人民路与郯东路交汇处银都购物中心一层",
+      "pro": "Wi-Fi,点唱机,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 10,
+      "storeName": "双月餐厅",
+      "addressDetail": "罗庄区罗四路与双月湖路交汇处西南角银座购物广场一、二层",
+      "pro": "Wi-Fi,礼品卡",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 11,
+      "storeName": "东兴豪森国际广场餐厅",
+      "addressDetail": "东兴路与人民大街交汇处东北角豪森国际广场一层肯德基",
+      "pro": "Wi-Fi,点唱机,店内参观,礼品卡,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 12,
+      "storeName": "宝泉路",
+      "addressDetail": "宝泉路与罗五路交汇处东北角宝丽财富广场西南角一层",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 13,
+      "storeName": "蒙山大道餐厅",
+      "addressDetail": "蒙山大道与北园路交汇处大润发一层",
+      "pro": "Wi-Fi,点唱机,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 14,
+      "storeName": "平邑浚河路餐厅",
+      "addressDetail": "平邑浚河路和汉阙路交汇处华百购物中心一、二层",
+      "pro": "Wi-Fi,点唱机,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 15,
+      "storeName": "常华餐厅",
+      "addressDetail": "中山北路1号一层、二层",
+      "pro": "Wi-Fi,点唱机,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 16,
+      "storeName": "君悦",
+      "addressDetail": "沂南县人民路以北、历山路以西阳都国际一层的房产",
+      "pro": "Wi-Fi,点唱机,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 17,
+      "storeName": "齐鲁园",
+      "addressDetail": "济南路与孝河路交汇处东南角齐鲁园广场一层的房产",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 18,
+      "storeName": "开元国际",
+      "addressDetail": "兰陵县中兴路东段开元国际商城一、二层",
+      "pro": "Wi-Fi",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 19,
+      "storeName": "临沂新城吾悦",
+      "addressDetail": "新城吾悦广场1069号商铺",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 20,
+      "storeName": "泰盛广场肯德基",
+      "addressDetail": "通达路与解放路交汇处东北角泰盛购物广场(中汇广场)负一层、一层、六层",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 21,
+      "storeName": "琅琊王路",
+      "addressDetail": "解放路西段与临西七路交汇处华强购物广场112-117",
+      "pro": "Wi-Fi,点唱机,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 22,
+      "storeName": "临沂北城万达",
+      "addressDetail": "万达广场内1025号商铺",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    },
+    {
+      "rownum": 23,
+      "storeName": "临沂华润万象汇",
+      "addressDetail": "华润万象汇第三层L363号商铺",
+      "pro": "Wi-Fi,店内参观,生日餐会",
+      "provinceName": "山东省",
+      "cityName": "临沂市"
+    }
+  ]
+}

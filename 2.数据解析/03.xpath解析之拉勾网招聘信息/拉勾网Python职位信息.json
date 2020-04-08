@@ -1,0 +1,397 @@
+{
+  "天眼查-Python开发工程师": {
+    "positionName": "Python开发工程师",
+    "company": "天眼查",
+    "salary": "15k-25k",
+    "address": [
+      "北京·知春路"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                数据服务 / 不需要融资 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6375880.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": [
+      "\n        ",
+      "工作职责：",
+      "\n",
+      "1、负责平台类产品的开发和性能调优；",
+      "\n",
+      "2、深入理解业务需求，提供具体问题的解决方案；",
+      "\n",
+      "3、与产品经理配合，快速构建能够满足产品需求的平台，系统及网络基础结构；",
+      "\n",
+      "任职资格：",
+      "\n",
+      "1、本科及以上学历，1年以上Python独立开发经验；",
+      "\n",
+      "2、熟悉至少一种Python的web开发框架（Flask、Django）；",
+      "\n",
+      "3、熟悉MySQL、Redis等数据库；",
+      "\n",
+      "4、有独立分析和解决问题的能力，有良好的团队合作精神。",
+      "\n",
+      "5、熟悉HTML、CSS、JavaScript等前端技术者优先；",
+      "\n        "
+    ]
+  },
+  "腾讯-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "腾讯",
+    "salary": "20k-40k",
+    "address": [
+      "深圳·科技园"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                社交 / 上市公司 / 2000人以上\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6844607.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": [
+      "\n        ",
+      "岗位职责：",
+      "\n",
+      "负责公司级研发及运营平台的开发，致力于提升公司在具体领域内的研发及运营效率，服务于公司所有研发&运维人员，涉及的内容包括软件源、配置中心等；",
+      "负责研发效能相关平台的研发，致力于提升基础的研发效率，涉及的内容包括CI、发布、监控、日志数据平台等；",
+      "负责运营体系、运营平台的建设，致力于提升部门业务的运营效率、运营质量。",
+      "\n",
+      "\n",
+      "岗位要求：",
+      "\n",
+      "精通Unix/Linux操作系统、Bash、C/C++，良好的编码规范； ",
+      "具备2年以上开发经验，至少熟悉1种开发语言：PHP、Java、Rubby、Python、Perl； ",
+      "具有良好的学习能力、沟通能力、服务理念和合作精神； ",
+      "强烈的责任心与主动性，对所负责工作有owner意识，并能自我驱动成长； ",
+      "有数据仓库建设经验，熟悉python和web前端开发优先； ",
+      "有运维自动化、监控系统、发布系统、运营支撑系统等开发经验者优先； ",
+      "有大型分布式系统设计与开发经验者优先；",
+      "\n        "
+    ]
+  },
+  "艾耕科技-Python开发工程师": {
+    "positionName": "Python开发工程师",
+    "company": "艾耕科技",
+    "salary": "10k-20k",
+    "address": [
+      "杭州·西湖区"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,数据服务 / A轮 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/4711299.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": [
+      "\n        ",
+      "职位描述：",
+      "\n",
+      "1. Python Web Service的开发，内外应用搭建。",
+      "\n",
+      "2. MySQL 数据库，存储线上系统信息",
+      "\n",
+      "\n",
+      "* 职位要求：",
+      "\n",
+      "1. 计算机、数学、统计、物理及相关专业本科以上学历",
+      "\n",
+      "2. 2年以上python语言应用开发经验； ",
+      "\n",
+      "3. 熟悉 Python web开发框架，如Django/Flask/Tornado",
+      "\n        "
+    ]
+  },
+  "艾耕科技-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "艾耕科技",
+    "salary": "15k-25k",
+    "address": [
+      "杭州·西溪"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,数据服务 / A轮 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/4804175.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": [
+      "\n        ",
+      "工作内容：",
+      "    * 负责账号系统、权限系统服务端的开发工作",
+      "    * 参与后端服务的技术选型，架构设计，业务开发，优化，以及稳定性保障工作",
+      "    * 深入理解业务需求，提供具体问题的解决方案",
+      "* 职位要求：",
+      "    * 计算机相关专业本科及以上学历，2年以上服务器端开发经历",
+      "    * 熟悉Python/C++/Java 其中一门语言",
+      "    * 熟悉常用算法和数据结构",
+      "    * 熟悉 MySQL、Redis 等常见数据库和缓存",
+      "    * 熟悉Shell等脚本语言，熟悉Linux 开发环境",
+      "* Extra points:",
+      "    * 了解SSO，了解OPENID、OAUTH、SAML协议",
+      "    * 对分布式、微服务以及高性能Web系统有了解",
+      "    * 理解容器技术和K8s技术",
+      "\n        "
+    ]
+  },
+  "海盗海-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "海盗海",
+    "salary": "10k-15k",
+    "address": [
+      "成都·中和"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                游戏,数据服务 / 不需要融资 / 少于15人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6986585.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": [
+      "\n        ",
+      "职位诱惑：",
+      "\n",
+      "年休假 定期旅游 年终奖",
+      "\n",
+      "职位描述：",
+      "\n",
+      "先说说我们：",
+      "\n",
+      "1、技术型成长型公司，团队成员大部分都是研发",
+      "\n",
+      "2、公司专注于研发各类平台上的软件机器人，比如：Steam,Origin等",
+      "\n",
+      "3、坐标成都高新区软件园E区，楼下就是地铁站，交通非常便利。",
+      "\n",
+      "4、负责人是技术出身的，沟通直接破事少，但提倡大家主动去推动自己的工作，而不是被动接受。",
+      "\n",
+      "5、不提倡加班文化，自我驱动，基本不加班且不加无意义的班，这个前提是你能跟上整个团队的节奏。",
+      "\n",
+      "6、公司目前处于稳步增长的阶段，每年业务增长都是100%以上。",
+      "\n",
+      "7、公司目前有8名小伙伴，其中研发五名，核心成员都是川大软件工程专业毕业，腾讯华为工作过5年以上的高级工程师。",
+      "\n",
+      "岗位职责：",
+      "\n",
+      "负责后台业务封装，提供API接口，对接管理端。",
+      "\n",
+      "负责各类自动化模拟业务开发。",
+      "\n",
+      "\n",
+      "\n",
+      "任职要求：",
+      "\n",
+      "1、熟练使用python，熟悉django/flask等任一框架；",
+      "\n",
+      "2、熟悉以下数据库 MySQL/MongoDB/Redis；",
+      "\n",
+      "3、熟悉 HTTP，TCP/IP 网络协议，有Fiddler/Charles抓包使用经验优先；",
+      "\n",
+      "4、熟悉Linux操作系统者优先；",
+      "\n",
+      "5、熟悉了解前端框架vue.js开发者优先；",
+      "\n",
+      "6、有较强的动手能力，能够借助各类工具辅助，帮助自己解决遇到的各类问题；",
+      "\n",
+      "7、良好的英文阅读与理解能力；",
+      "\n",
+      "8、诚信、踏实、善于主动沟通；",
+      "\n        "
+    ]
+  },
+  "大智慧-Python开发工程师": {
+    "positionName": "Python开发工程师",
+    "company": "大智慧",
+    "salary": "10k-20k",
+    "address": [
+      "上海·东方路"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 大专\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,金融 / 上市公司 / 500-2000人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6805881.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "深圳道乐-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "深圳道乐",
+    "salary": "7k-10k",
+    "address": [
+      "广州·琶洲"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,金融 / 未融资 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6785833.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "普特生物医学-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "普特生物医学",
+    "salary": "15k-24k",
+    "address": [
+      "深圳·西丽"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                医疗丨健康 / 不需要融资 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/5743121.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "爱选科技-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "爱选科技",
+    "salary": "12k-18k",
+    "address": [
+      "北京·建国门"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,金融 / 天使轮 / 15-50人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6253239.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "币信-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "币信",
+    "salary": "25k-50k",
+    "address": [
+      "北京·燕莎"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验5-10年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网 / 不需要融资 / 50-150人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6072230.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "易宝软件科技（南京）有限公司-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "易宝软件科技（南京）有限公司",
+    "salary": "10k-20k",
+    "address": [
+      "杭州·江南"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网 / 上市公司 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6951634.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "硕梦信息-Python开发工程师": {
+    "positionName": "Python开发工程师",
+    "company": "硕梦信息",
+    "salary": "12k-20k",
+    "address": [
+      "上海·周家桥"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,企业服务 / 不需要融资 / 50-150人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6985725.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "老虎集团-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "老虎集团",
+    "salary": "20k-35k",
+    "address": [
+      "北京·朝阳区"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,金融 / 上市公司 / 500-2000人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6176098.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "广州游爱-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "广州游爱",
+    "salary": "10k-14k",
+    "address": [
+      "广州·五山"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验1-3年 / 大专\n                                "
+    ],
+    "companyProfile": [
+      "\n                                移动互联网,游戏 / 上市公司 / 500-2000人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/3830574.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  },
+  "云势软件-python开发工程师": {
+    "positionName": "python开发工程师",
+    "company": "云势软件",
+    "salary": "18k-25k",
+    "address": [
+      "北京·三里屯"
+    ],
+    "experience": [
+      "\n                                    ",
+      "\n                                    ",
+      "经验3-5年 / 本科\n                                "
+    ],
+    "companyProfile": [
+      "\n                                企业服务 / B轮 / 150-500人\n                            "
+    ],
+    "detailUrl": "https://www.lagou.com/jobs/6537405.html?show=49193bb3894647b6aa35e53a56536460",
+    "describe": []
+  }
+}
