@@ -1,4 +1,6 @@
-﻿# 一、需求
+﻿@[TOC]
+
+# 一、需求
 1. 使用任意代理 IP 进行如下操作
 2. 使用requests模块进行豆瓣电影的个人用户登录操作
 3. 使用requests模块访问个人用户的电影排行榜->分类排行榜->任意分类对应的子页面
@@ -95,20 +97,133 @@ def getMiddleData(self, text):
 
 # 三、Code
 
+## 准备工作
+1. 程序的开发环境
+
+Python：python 3.7 （MiniConda）
+
+**requirements.txt：**
+```
+beautifulsoup4==4.8.2
+bs4==0.0.1
+fake-useragent==0.1.11
+lxml==4.5.0
+PyMySQL==0.9.3
+requests==2.23.0
+selenium==3.141.0
+urllib3==1.25.8
+```
+
+2. 程序实现的功能
+
+对豆瓣电影排行榜数据进行爬取，并持久化存储到 json 文件或数据库中。
+
+3. 程序的启动方式
+
+将 main.py 和 sipder.py 放在同一目录下，执行 main.py 文件。
+
+4. 登录用户信息
+
+豆瓣登录邮箱和密码。
+
+5. 程序的运行效果
+```
+{
+    "排名": 1,
+    "电影名": "肖申克的救赎",
+    "海报Url": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg",
+    "详情Url": "https://movie.douban.com/subject/1292052/",
+    "导演": "弗兰克·德拉邦特",
+    "片长": "142分钟",
+    "类型": "犯罪,剧情",
+    "制片国家": "美国",
+    "上映日期": "1994-09-10",
+    "演员数量": 25,
+    "评分": "9.7",
+    "演员": "蒂姆·罗宾斯,摩根·弗里曼,鲍勃·冈顿,威廉姆·赛德勒,克兰西·布朗,吉尔·贝罗斯,马克·罗斯顿,詹姆斯·惠特摩,杰弗里·德曼,拉里·布兰登伯格,尼尔·吉恩托利,布赖恩·利比,大卫·普罗瓦尔,约瑟夫·劳格诺,祖德·塞克利拉,保罗·麦克兰尼,芮妮·布莱恩,阿方索·弗里曼,V·J·福斯特,弗兰克·梅德拉诺,马克·迈尔斯,尼尔·萨默斯,耐德·巴拉米,布赖恩·戴拉特,唐·麦克马纳斯",
+    "语言": "英语"
+  },
+  {
+    "排名": 2,
+    "电影名": "霸王别姬",
+    "海报Url": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.jpg",
+    "详情Url": "https://movie.douban.com/subject/1291546/",
+    "导演": "陈凯歌",
+    "片长": "171 分钟",
+    "类型": "剧情,爱情,同性",
+    "制片国家": "中国大陆,中国香港",
+    "上映日期": "1993-07-26",
+    "演员数量": 26,
+    "评分": "9.6",
+    "演员": "张国荣,张丰毅,巩俐,葛优,英达,蒋雯丽,吴大维,吕齐,雷汉,尹治,马明威,费振翔,智一桐,李春,赵海龙,李丹,童弟,沈慧芬,黄斐,徐杰,黄磊,冯远征,杨立新,方征,周璞,隋永清",
+    "语言": "汉语普通话"
+  },
+  ```
+6. 程序设计的流程图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200408213256136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzMzNjI4MQ==,size_16,color_FFFFFF,t_70)
+
 ## main.py
 
 ```python
+import re
+import time
+from lxml import etree
 from spider import Spider
 
 
 class DouBanSpider(Spider):
-    pass
+    def getMiddleData(self, text):
+        """用于获取中间 URL，子代可重写"""
+        tree = etree.HTML(text)
+        spanList = tree.xpath('//*[@id="content"]/div/div[2]/div[1]/div/span')
+        for item in spanList:
+            typeName, typeNumber, interval_id = re.search('type_name=(.*?)&type=(\d+)&interval_id=(.*?)&action=',
+                                                          item.xpath('./a/@href')[0]).groups()
+            self.spiderUrl[
+                typeName] = f"https://movie.douban.com/j/chart/top_list?type={typeNumber}&interval_id={interval_id}&action=&start=0&limit=40"
+
+
+def getData(self):
+    """获取目标数据"""
+    for name, url in self.spiderUrl.items():
+        header = self.getHeaders()
+        response = self.session.get(url=url, headers=header, proxies=self.getProxy(), timeout=10).json()
+        for item in response:
+            try:
+                item.pop("rating")
+                item.pop("is_playable")
+                item.pop("id")
+                item.pop("vote_count")
+                item.pop("is_watched")
+                item["排名"], item["电影名"], item["海报Url"] = item.pop("rank"), item.pop("title"), item.pop("cover_url")
+                detailUrl = item.pop("url")
+                item["详情Url"] = detailUrl
+                detailPage = self.session.get(url=detailUrl, headers=header, proxies=self.getProxy(), timeout=10).text
+                tree = etree.HTML(detailPage)
+                item["导演"] = ",".join(tree.xpath('//*[@id="info"]/span[1]/span[2]/a/text()'))
+                item["片长"] = tree.xpath('//*[@id="info"]/span[@property="v:runtime"]/text()')[0]
+                item["类型"], item["制片国家"], item["上映日期"] = ",".join(item.pop("types")), ",".join(
+                    item.pop("regions")), item.pop(
+                    "release_date")
+                item["演员数量"], item["评分"], item["演员"] = item.pop("actor_count"), item.pop("score"), ",".join(
+                    item.pop("actors"))
+                item["语言"] = ",".join(re.search('<span class="pl">语言:</span> (.*?)<br/>', detailPage).groups())
+                print("\t", item["电影名"], "爬取完毕。")
+                time.sleep(1.5)
+            except Exception as e:
+                print("\t", item["电影名"], "爬取出错：", e)
+                item["error"] = str(e)
+                break
+        self.saveJson(fileName=name, obj=response)
+        # self.saveDataBase(fileName=name, obj=response)
+        print(f"{name}系列爬取完毕！")
+        break
 
 
 if __name__ == '__main__':
     spider = DouBanSpider(
-        email="**************",
-        password="**************",
+        email="2426671397@qq.com",
+        password="Alex123",
         indexUrl="https://movie.douban.com/chart",
         loginUrl="https://accounts.douban.com/j/mobile/login/basic",
     )
@@ -121,11 +236,8 @@ if __name__ == '__main__':
 ```python
 import json
 import random
-import re
-import time
 import pymysql
 import requests
-from lxml import etree
 from fake_useragent import UserAgent
 
 
@@ -173,48 +285,11 @@ class Spider:
 
 	def getMiddleData(self, text):
 		"""用于获取中间 URL，子代可重写"""
-		tree = etree.HTML(text)
-		spanList = tree.xpath('//*[@id="content"]/div/div[2]/div[1]/div/span')
-		for item in spanList:
-			typeName, typeNumber, interval_id = re.search('type_name=(.*?)&type=(\d+)&interval_id=(.*?)&action=',
-			                                              item.xpath('./a/@href')[0]).groups()
-			self.spiderUrl[typeName] = f"https://movie.douban.com/j/chart/top_list?type={typeNumber}&interval_id={interval_id}&action=&start=0&limit=40"
+		pass
 
 	def getData(self):
-		"""获取目标数据"""
-		for name, url in self.spiderUrl.items():
-			header = self.getHeaders()
-			response = self.session.get(url=url, headers=header, proxies=self.getProxy(), timeout=10).json()
-			for item in response:
-				try:
-					item.pop("rating")
-					item.pop("is_playable")
-					item.pop("id")
-					item.pop("vote_count")
-					item.pop("is_watched")
-					item["排名"], item["电影名"], item["海报Url"] = item.pop("rank"), item.pop("title"), item.pop("cover_url")
-					detailUrl = item.pop("url")
-					item["详情Url"] = detailUrl
-					detailPage = self.session.get(url=detailUrl, headers=header, proxies=self.getProxy(), timeout=10).text
-					tree = etree.HTML(detailPage)
-					item["导演"] = ",".join(tree.xpath('//*[@id="info"]/span[1]/span[2]/a/text()'))
-					item["片长"] = tree.xpath('//*[@id="info"]/span[@property="v:runtime"]/text()')[0]
-					item["类型"], item["制片国家"], item["上映日期"] = ",".join(item.pop("types")), ",".join(
-						item.pop("regions")), item.pop(
-						"release_date")
-					item["演员数量"], item["评分"], item["演员"] = item.pop("actor_count"), item.pop("score"), ",".join(
-						item.pop("actors"))
-					item["语言"] = ",".join(re.search('<span class="pl">语言:</span> (.*?)<br/>', detailPage).groups())
-					print("\t", item["电影名"], "爬取完毕。")
-					time.sleep(1.5)
-				except Exception as e:
-					print("\t", item["电影名"], "爬取出错：", e)
-					item["error"] = str(e)
-					break
-			self.saveJson(fileName=name, obj=response)
-			# self.saveDataBase(fileName=name, obj=response)
-			print(f"{name}系列爬取完毕！")
-			break
+		"""获取目标数据，子代可重写"""
+		pass
 
 	@staticmethod
 	def saveJson(fileName, obj):
@@ -249,37 +324,3 @@ value({item["排名"]},{item["电影名"]},{item["海报Url"]},{item["详情Url"
 		print(f"{tableName} table 创建完毕！")
 
 ```
-效果展示：
-
-```
-{
-    "排名": 1,
-    "电影名": "肖申克的救赎",
-    "海报Url": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg",
-    "详情Url": "https://movie.douban.com/subject/1292052/",
-    "导演": "弗兰克·德拉邦特",
-    "片长": "142分钟",
-    "类型": "犯罪,剧情",
-    "制片国家": "美国",
-    "上映日期": "1994-09-10",
-    "演员数量": 25,
-    "评分": "9.7",
-    "演员": "蒂姆·罗宾斯,摩根·弗里曼,鲍勃·冈顿,威廉姆·赛德勒,克兰西·布朗,吉尔·贝罗斯,马克·罗斯顿,詹姆斯·惠特摩,杰弗里·德曼,拉里·布兰登伯格,尼尔·吉恩托利,布赖恩·利比,大卫·普罗瓦尔,约瑟夫·劳格诺,祖德·塞克利拉,保罗·麦克兰尼,芮妮·布莱恩,阿方索·弗里曼,V·J·福斯特,弗兰克·梅德拉诺,马克·迈尔斯,尼尔·萨默斯,耐德·巴拉米,布赖恩·戴拉特,唐·麦克马纳斯",
-    "语言": "英语"
-  },
-  {
-    "排名": 2,
-    "电影名": "霸王别姬",
-    "海报Url": "https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.jpg",
-    "详情Url": "https://movie.douban.com/subject/1291546/",
-    "导演": "陈凯歌",
-    "片长": "171 分钟",
-    "类型": "剧情,爱情,同性",
-    "制片国家": "中国大陆,中国香港",
-    "上映日期": "1993-07-26",
-    "演员数量": 26,
-    "评分": "9.6",
-    "演员": "张国荣,张丰毅,巩俐,葛优,英达,蒋雯丽,吴大维,吕齐,雷汉,尹治,马明威,费振翔,智一桐,李春,赵海龙,李丹,童弟,沈慧芬,黄斐,徐杰,黄磊,冯远征,杨立新,方征,周璞,隋永清",
-    "语言": "汉语普通话"
-  },
-  ```
