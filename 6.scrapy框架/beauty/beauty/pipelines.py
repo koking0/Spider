@@ -7,11 +7,6 @@ from scrapy.pipelines.images import ImagesPipeline
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class BeautyPipeline(object):
-    def process_item(self, item, spider):
-        return item
-
-
 class BeautyImagesPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
         """用于请求方法"""
