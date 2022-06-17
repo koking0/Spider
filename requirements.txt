@@ -30,7 +30,7 @@ pywin32==227
 queuelib==1.5.0
 redis==3.4.1
 requests==2.23.0
-Scrapy==2.0.1
+Scrapy==2.6.1
 scrapy-redis==0.6.8
 selenium==3.141.0
 service-identity==18.1.0
