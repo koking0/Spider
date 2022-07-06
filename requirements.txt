@@ -14,7 +14,7 @@ fake-useragent==0.1.11
 hyperlink==19.0.0
 idna==2.9
 incremental==17.5.0
-lxml==4.5.0
+lxml==4.9.1
 multidict==4.7.5
 parsel==1.5.2
 Pillow==7.1.1
