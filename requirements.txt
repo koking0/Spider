@@ -1,4 +1,4 @@
-aiohttp==3.6.2
+aiohttp==3.7.4
 async-timeout==3.0.1
 attrs==19.3.0
 Automat==20.2.0
@@ -26,18 +26,18 @@ PyDispatcher==2.0.5
 PyHamcrest==2.0.2
 PyMySQL==0.9.3
 pyOpenSSL==19.1.0
-pywin32==227
+pywin32==301
 queuelib==1.5.0
 redis==3.4.1
 requests==2.23.0
-Scrapy==2.0.1
+Scrapy==2.6.2
 scrapy-redis==0.6.8
 selenium==3.141.0
 service-identity==18.1.0
 six==1.14.0
 soupsieve==2.0
 Twisted==22.10.0
-urllib3==1.25.8
+urllib3==1.26.5
 w3lib==1.21.0
 yarl==1.4.2
 zope.interface==5.1.0
